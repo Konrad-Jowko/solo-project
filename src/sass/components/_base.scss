@@ -1,0 +1,778 @@
+// Basic Tags //
+body {
+  font-family: $font-main;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: $size-vbig;
+  color: $color-dark;
+  font-weight: $weight-medium;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: $size-big;
+  color: $color-gray;
+  font-weight: $weight-medium;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: $size-big;
+  color: $color-gray;
+  font-weight: $weight-bold;
+}
+
+p {
+  font-size: $size-text;
+  color: $color-dark;
+  font-weight: $weight-light;
+}
+
+.container {
+  height: 120%;
+  padding-bottom: 18px;
+  background: $color-vlight;
+}
+
+// Topbar //
+
+.topbar {
+  position: fixed;
+  display: flex;
+  width: 1125px;
+  justify-content: flex-end;
+  height: 52px;
+  background: $color-white;
+  border-right: 1px solid $color-light;
+  border-bottom: 1px solid $color-light;
+  fill: $color-gray;
+  margin-left: 156.367px;
+
+  .topbbar-btn {
+    display: flex;
+    align-items: center;
+    border-left: 1px solid $color-light;
+    padding: 20px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $color-vlight;
+    }
+  }
+
+  .wallet {
+    color: $color-gray;
+    font-size: 20px;
+
+    .icon-wallet {
+      margin-right: 16px;
+    }
+
+    .icon-arrowdown {
+      margin-left: 20px;
+    }
+  }
+
+  .notification {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      border-radius: $circle;
+      z-index: 5;
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: $color-darkorange;
+      right: 20px;
+      top: 15px;
+    }
+  }
+
+  .user-id {
+    font-size: $size-small;
+    font-weight: $weight-light;
+    color: $color-steelblue;
+
+    .icon-profile {
+      margin-right: 14px;
+    }
+  }
+
+}
+
+.show-sidebar {
+  display: none;
+}
+
+.sidebar {
+  position: fixed;
+  background: $color-black;
+  content: "";
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 65px;
+  height: 100%;
+  margin: 0;
+
+  .sidebar-top {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 63px;
+
+    .icon-menu {
+      position: relative;
+      opacity: 0;
+    }
+  }
+
+  .sidebar-pages{
+    flex-direction: column;
+    padding-bottom: 28px;
+    border-bottom: 1px solid $color-dark;
+    max-height: 407px;
+
+    .sidebar-page{
+      box-sizing: border-box;
+      padding: 14px;
+      color: $color-gray;
+      fill: $color-gray;
+      font-weight: $weight-light;
+      font-size: $size-text;
+      border-left: 4px solid transparent;
+      display: flex;
+      justify-content: flex-start;
+
+      .sidebar-icon-wrapper {
+        width: 16px;
+        margin-right: 14px;
+      }
+
+      &:hover  {
+        box-sizing: border-box;
+        color: $color-white;
+        fill: $color-white;
+        background: $color-dark;
+        border-left-color: $color-darkorange;
+      }
+    }
+
+    .active {
+      box-sizing: border-box;
+      color: $color-white;
+      fill: $color-white;
+      background: $color-dark;
+      border-left-color: $color-darkorange;
+    }
+
+  }
+
+
+  .sidebar-messenger {
+    margin-top: 9px;
+    display: flex;
+    flex-direction: column;
+
+    .messenger-title {
+      padding: 20px;
+      font-size: $size-text;
+      font-weight: $weight-medium;
+      color: $color-gray;
+      text-transform: uppercase;
+    }
+
+    .manager-id {
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .wrapper-image {
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+
+      &::before {
+        position: absolute;
+        border-radius: $circle;
+        z-index: 5;
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: $color-green;
+        right: 5px;
+      }
+    }
+
+    .manager-name {
+      font-weight: $weight-light;
+      font-size: $size-text;
+      color: $color-steelblue;
+      margin-left: 10px;
+    }
+  }
+
+  .sidebar-topbar {
+    opacity: 0;
+  }
+}
+
+
+// Content//
+
+.general-statistic {
+  background-color: $color-white;
+  border-top: 70px solid $color-vlight;
+  border-left: 170.376px solid $color-vlight;
+  margin-bottom: 22px;
+  width: 1260px;
+
+  .general-title {
+    border-bottom: 1px solid $color-light;
+
+    h2{
+      padding: 14px;
+      margin: 0;
+    }
+  }
+
+  .general-dates {
+    border-bottom: 1px solid $color-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 34px 0;
+
+    [class="btn orange"] {
+      width: 41px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 13px;
+
+      .icon-refresh {;
+        fill: $color-white;
+      }
+    }
+  }
+
+  .charts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .chart-details {
+      display: flex;
+
+      ul {
+        padding: 0px;
+        margin: 40px 30px;
+      }
+    }
+
+    .chart {
+      padding: 0 30px;
+      padding-top: 36px;
+      width: 856px;
+
+      h3 {
+        padding: 14px 0;
+        margin: 0;
+      }
+    }
+
+    .graph {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .chart-btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 29px 0 43px 0;
+
+      .color-tab {
+        margin: 0 21px;
+      }
+
+      .blue p{
+        color: $color-steelblue;
+      }
+
+      .orange {
+        background-color: $color-orange;
+      }
+
+      .green {
+        background-color: $color-green;
+      }
+    }
+
+    .chart-wrapper {
+      padding: 33px 0 55px 0;
+    }
+  }
+}
+
+.links-section {
+  border-left: 170.376px solid $color-vlight;
+  width: 1260px;
+  background-color: $color-white;
+
+  .links-title {
+    border-bottom: 1px solid $color-light;
+
+    h2{
+      padding: 14px;
+      margin: 0;
+    }
+  }
+
+  .links-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .btn {
+      margin: 23px 0;
+      padding: 10px 17px;
+      display: flex;
+    }
+
+    ul {
+      margin: 0;
+    }
+  }
+}
+
+// Types of links //
+.link {
+  text-decoration: none;
+  font-weight: $weight-light;
+  color: $color-steelblue;
+  font-size: $size-big;
+
+  &:hover {
+    color: $color-orange;
+  }
+}
+
+.small-link {
+  text-decoration: none;
+  font-weight: $weight-light;
+  color: $color-steelblue;
+  font-size: $size-small;
+
+  &:hover {
+    color: $color-orange;
+  }
+}
+
+.show-link {
+  fill: $color-steelblue;
+
+  &:hover {
+    fill: $color-orange;
+  }
+}
+
+// Icons //
+
+svg[class^="icon-"] {
+  object-fit: contain;
+}
+
+.icon-link {
+  width: 16px;
+  height: 8px;
+}
+
+.icon-trash {
+  width: 14px;
+  height: 15px;
+  margin: 10px;
+}
+
+.icon-show {
+  width: 13px;
+  height: 13px;
+  margin: 10px;
+}
+
+.icon-checked, .icon-calendar {
+  width: 13px;
+  height: 13px;
+}
+
+.icon-password {
+  width: 21px;
+  height: 12px;
+}
+
+.icon-poscircle, .icon-negative  {
+  width: 15px;
+  height: 15px;
+}
+
+.icon-close {
+  width: 12px;
+  height: 12px;
+}
+
+.icon-arrowup {
+  width: 7px;
+  height: 5px;
+}
+
+.icon-arrowdown {
+  width: 11px;
+  height: 7px;
+}
+
+.icon-arrowL, .icon-arrowR {
+  width: 10px;
+  height: 17px;
+  margin: 0 25px;
+}
+
+.icon-wallet {
+  width: 17px;
+  height: 18px;
+}
+
+.icon-notification {
+  width: 16px;
+  height: 17px;
+}
+
+.icon-profile {
+  height: 17px;
+  width: 17px;
+}
+
+.icon-logout {
+  width: 19px;
+  height: 15px;
+}
+
+.icon-general {
+  width: 16px;
+  height: 15px;
+}
+
+.icon-details, .icon-banners {
+  width: 14px;
+  height: 13px;
+}
+
+.icon-personal {
+  width: 9px;
+  height: 13px;
+}
+
+.icon-payout {
+  width: 13px;
+  height: 13px;
+}
+
+.icon-postback {
+  width: 13px;
+  height: 14px;
+}
+
+.icon-refresh {
+  min-width: 15px;
+  min-height: 15px;
+}
+// List types //
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+
+  [class^="link-"] {
+    border-top: 1px solid $color-light;
+    border-bottom: 1px solid $color-light;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    min-height: 60px;
+
+    &:hover {
+      cursor: pointer;
+      background: $color-vlight;
+    }
+
+    .title {
+      width: 300px;
+      padding-left: 19px;
+    }
+
+    .links-container {
+      width: 280px;
+    }
+  }
+
+  //With link and icons //
+
+  .link-icons {
+    width: 700px;
+
+    .btn-container {
+      width: 100px;
+
+      .icon-link {
+        fill: $color-darkorange;
+        margin: 10px;
+        opacity: 0;
+
+        &:hover {
+          fill: $color-dark;
+        }
+      }
+
+      .icon-trash {
+        opacity: 0;
+
+        &:hover {
+          fill: $color-red;
+        }
+      }
+    }
+
+    &:hover {
+      .icon-link, .icon-trash {
+        opacity: 1;
+      }
+    }
+  }
+
+  // With only link //
+
+  .link-text {
+    width: 368px;
+    justify-content: space-between;
+
+    h3 {
+      padding: 0 19px;
+    }
+
+    .link {
+      margin: 0 26px;
+    }
+  }
+  // With digit //
+  .link-digit {
+    border-top: none;
+    width: 368px;
+    justify-content: space-between;
+    min-height: 0;
+    height: 36px;
+
+
+    .digit {
+      font-weight: $weight-light;
+    }
+  }
+
+}
+
+// Sidebar elements //
+
+.logo {
+  background: $color-black;
+}
+
+.icon-menu {
+  font-size: 18px;
+  color: $color-gray;
+}
+
+// Buttons //
+
+.btn {
+  border: none;
+  font-weight: $weight-light;
+  font-size: $size-btn;
+  color: $color-white;
+  border-radius: $radius;
+  padding: 10px 21px;
+
+  &.gray {
+    background: $color-gray;
+
+    &:hover {
+      cursor: pointer;
+      background: $color-lightgray;
+    }
+  }
+
+  &.orange {
+    background: $color-darkorange;
+
+    &:hover {
+      cursor: pointer;
+      background: $color-orange;
+    }
+
+  }
+
+  &.disabled {
+    background: $color-light;
+    display: flex;
+
+
+    &:hover {
+      cursor: not-allowed;
+    }
+
+    .icon-link {
+      fill: $color-white;
+      margin: auto;
+    }
+
+    .text {
+      padding: 0 10px;
+      margin: auto;
+    }
+  }
+}
+
+// Color tabs //
+
+.color-tab {
+  width: 126px;
+  height: 40px;
+  border-radius: $radius;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-vlight;
+  }
+
+  &.active {
+    background-color: $color-vlight;
+  }
+
+  .color {
+    background-color: $color-lightsteel;
+    width: 16px;
+    height: 16px;
+    border-radius: $circle;
+    margin: 0 17px;
+  }
+
+  p {
+    font-weight: $weight-light;
+    font-size: $size-big;
+    color: $color-lightgray;
+    width: 60%;
+    text-align: left;
+    margin-left: -20px;
+    margin-right: 2px;
+  }
+}
+
+// inputs //
+
+.input {
+  outline: none;
+  padding: 10px;
+  width: 152px;
+  height: 40px;
+  border: 1px solid $color-light;
+  border-radius: $radius;
+  font-weight: $weight-light;
+  font-size: $size-text;
+  color: $color-dark;
+}
+
+// Date Picker //
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  color: transparent;
+  background: transparent;
+}
+
+.date-picker {
+  position: relative;
+  border: 1px solid $color-light;
+  border-radius: $radius;
+  height: 40px;
+  width: 325px;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    border: 1px solid $color-lightgray;
+    cursor: pointer;
+
+    .icon-calendar {
+      fill: $color-black;
+    }
+  }
+
+  input[type="date"] {
+    outline: none;
+    border: 1px;
+    text-align: left;
+    font-weight: $weight-light;
+    font-size: $size-text;
+    cursor: pointer;
+
+    &:valid~.icon-calendar {
+      fill: $color-black;
+    }
+  }
+
+  .inputs {
+    display: flex;
+    justify-content: center;
+  }
+
+  input[class="start"]{
+    margin: 5px;
+    min-width: 130px;
+    border-right: 1px solid $color-light;
+    padding: 0 10px;
+
+  }
+
+  input[class="end"]{
+    min-width: 180px;
+    background: transparent;
+    z-index: 1;
+  }
+
+  .icon-calendar {
+    min-width: 13px;
+    min-height: 13px;
+    position: relative;
+    right: 5%;
+    top: 30%;
+    fill: $color-gray;
+  }
+
+}
